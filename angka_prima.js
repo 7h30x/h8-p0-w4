@@ -1,5 +1,9 @@
 function angkaPrima(angka) {
     let prima=true;
+    if (angka===0 || angka ===1) {
+        prima=false;
+        return prima;
+    }
     for (let i=2; i<angka; i++) {
         if (angka%i ===0) {
            

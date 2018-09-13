@@ -1,14 +1,24 @@
 
-Implementasikan function sorting dan getTotal untuk mendapatkan angka yang paling besar dan mengetahui berapa kali angka tersebut muncul di dalam arrNumber.
 
-Dengan HANYA mengubah code di dalam 2 function yang diberikan (sorting dan getTotal). Dilarang mengubah isi dalam function mostFrequentLargestNumbers!
-
-function sorting(arrNumber) {
-  // code di sini
+ function sorting(arrNumber) {
+  
+  return arrNumber.sort((a,b)=>b-a);
 }
 
 function getTotal(arrNumber) {
-  // code di sini
+  
+  var max=arrNumber[0];
+  var i=0;
+  var counter=0
+  if (arrNumber===[]) {
+    return '';
+  }
+  while (arrNumber[i]===max) {
+    counter++;
+    i++;
+  }
+  
+  return `angka paling besar adalah ${max} dan jumlah kemunculan sebanyak ${counter} kali`;
 }
 
 function mostFrequentLargestNumbers(arrNumber) {

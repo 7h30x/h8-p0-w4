@@ -1,14 +1,32 @@
-Logic Challenge - Total Digit (Rekursif)
+/*Logic Challenge - Total Digit (Rekursif)
 Problem
-Diberikan sebuah function totalDigitRekursif(angka) yang menerima satu parameter berupa angka. Function akan me-return nilai total dari digit tersebut dengan menambahkan satu per satu angka dari digit paling depan ke paling belakang. Wajib menggunakan rekursif untuk berlatih rekursif! Disarankan untuk tidak menggunakan looping for untuk soal ini.
+Diberikan sebuah function totalDigitRekursif(angka) yang menerima satu parameter berupa angka. 
+Function akan me-return nilai total dari digit tersebut dengan menambahkan satu per satu angka 
+dari digit paling depan ke paling belakang. Wajib menggunakan rekursif untuk berlatih rekursif! 
+Disarankan untuk tidak menggunakan looping for untuk soal ini.
 
 Contoh:
 
 512, berarti outputnya adalah 8, karena 5 + 1 + 2 = 8. 1542, berarti outputnya adalah 12, karena 1 + 5 + 4 + 2 = 12.
 
-Code
+*/
+
+
 function totalDigitRekursif(angka) {
-  // you can only write your code here!
+  let stringAngka=String(angka); //conver to string of digit for slicing
+  if (stringAngka.length>0) {   
+    return Number(stringAngka[0]) + totalDigitRekursif(stringAngka.slice(1))  // each embedded function call takes the sliced string of digits and returns a Number vaue
+  }
+  else {
+    return 0
+  }
+  
+  }
+  
+  
+  
+
+
 }
 
 // TEST CASES

@@ -1,5 +1,5 @@
 function digitPerkalianMinimum(angka) {
-  var factors=[];
+  var factors=[];           //init factor array
   var min="";
   for (let i=1; i<angka+1; i++) {
     if (angka%i===0) {
@@ -17,7 +17,7 @@ function digitPerkalianMinimum(angka) {
  
    }
  
-   for (let k=0; k<factors.length; k+=2) {
+   for (let k=0; k<factors.length; k+=2) {      //loop across pairs of factors in the factor array
      var lengthOfFactors=(String(factors[k])+String(factors[k+1])).length;
      if (lengthOfFactors<min || min==0) {
        min=lengthOfFactors;

@@ -1,38 +1,40 @@
+/*
+Diberikan sebuah function cariModus(arr) yang menerima sebuah array angka. 
+Function akan me-return modus dari array atau deret angka tersebut.
+ Modus adalah angka dari sebuah deret yang paling banyak atau paling sering muncul. 
+ Contoh, modus dari [10, 4, 5, 2, 4] adalah 4. Jika modus tidak ditemukan, function akan me-return -1. 
+ Apabila ditemukan lebih dari dua nilai modus, tampilkan nilai modus yang paling pertama muncul (dihitung dari kiri ke kanan). 
+Dan apabila dialam modus hanya ada 1 nilai yang sama maka function akan me-return -1, Contohnya [1, 1, 1] adalah -1.
+*/
+
 function cariModus(arr) {
-    var modus={};   //object untuk hold key:pair angka:freq
+  var modus={};   //object untuk hold angka:freq
 
-    
-    for (let i=0;i<arr.length; i++) { 
-        if (arr[i] in modus) {
-          modus[arr[i]]+=1;
-        }
-        else{
-          modus[arr[i]]=1;
-        }
-    }
+  
+  for (let i=0;i<arr.length; i++) { 
+      if (arr[i] in modus) {        //if the number is alredy in modus add 1
+        modus[arr[i]]+=1;
+      }
+      else{
+        modus[arr[i]]=1;
+      }
+  }
 
-    var keys = Object.keys(modus)  //binding ke array berisi keys of modus
-    //proses mencari key dari value terbesar
-    var largest = modus[keys[0]] 
-    var largestNum = keys[0]
+  var values = Object.entries(modus).sort((a,b)=>b[1]-a[1])  // array berisi values of modus
+  //proses mencari key dari value terbesar
 
-    
-    for (let i = 0 ; i < keys.length; i++) {
-      if (modus[keys[i]]>largest) {
-        largest=modus[keys[i]];
-        largestNum=keys[i];
-      } 
-     if (largest===1 || largest/arr.length===1) { //exception for if the whole array is comprised of the same number or if there is no modus
-       largestNum=-1
-     }
+  var largest = values[0][1] 
+  var largestNum = values[0][0]
 
+    if (largest===1 || largest/arr.length===1) { //exception for if the whole array is comprised of the same number or if there is no modus
+     largestNum=-1
     }
 
 
-    return largestNum
-    
+
+  return largestNum
+  
 }
-
 
 
 

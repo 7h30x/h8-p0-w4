@@ -22,35 +22,29 @@ function countProfit(shoppers) {
                      ['Baju Zoro', 500000, 2],
                      ['Sweater Uniklooh', 175000, 1]
                    ];
-  let costList = {}; //create cost list {name:price}
-  let stockList = []; //populate stocklist
-  if (shoppers.length===0) {
-    return stockList;}
-  else {
-      for (i=0; i<listBarang.length; i++) { 
-                stockList.push({});
-                stockList[i].product= listBarang[i][0];
-                stockList[i].shoppers= [];
-                stockList[i].leftOver= listBarang[i][2];
-                stockList[i].totalProfit= 0;
-                costList[listBarang[i][0]]=listBarang[i][1];
-              }
-      for (k in shoppers){            //loop over shoppers array
-          
-            for (j in stockList) { 
-                if (shoppers[k].product===stockList[j].product) { //if item in stocklist = item in shoppers
-                  if (stockList[j].leftOver < shoppers[k].amount) {
-                    break;
-                  } //if stock is less than demanded ; transaction fails (onto next object in shopper array)
-                    stockList[j].shoppers.push(shoppers[k].name); //push shopper name
-                    stockList[j].leftOver -= shoppers[k].amount; //reduce stock
-                    stockList[j].totalProfit += costList[stockList[j].product] * shoppers[k].amount; //profit = cost * amount
-              
-                }
-              }
-        }
-      return stockList;
+  var results=[];
+  if (!shoppers.length) {
+    return (results)
   }
+  for (i in listBarang) {
+      results.push({});
+      results[i].product=listBarang[i][0]; 
+      results[i].shoppers=[];
+      results[i].leftOver=listBarang[i][2];
+      results[i].totalProfit=0;
+      for (j in shoppers) {
+          if (shoppers[j].product===results[i].product && shoppers[j].amount<=results[i].leftOver){
+              results[i].shoppers.push(shoppers[j].name);
+              results[i].leftOver-=shoppers[j].amount
+              results[i].totalProfit+=shoppers[j].amount*listBarang[i][1];
+          }
+      }
+  }
+  return results;
+
+
+
+
 }
 
 // TEST CASES

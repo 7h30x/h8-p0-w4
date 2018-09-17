@@ -10,9 +10,7 @@ for (num in arr) {
     }
 }
 console.log(tampung)
-/*
 
-/*
 input=array
 outpute: string dependent on values of the array
 */

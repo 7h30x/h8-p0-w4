@@ -12,9 +12,11 @@ function cariModus(arr) {
     }
 
     var keys = Object.keys(modus)  //binding ke array berisi keys of modus
-//proses mencari key dari value terbesar
+    //proses mencari key dari value terbesar
     var largest = modus[keys[0]] 
     var largestNum = keys[0]
+
+    
     for (let i = 0 ; i < keys.length; i++) {
       if (modus[keys[i]]>largest) {
         largest=modus[keys[i]];
@@ -27,7 +29,6 @@ function cariModus(arr) {
     }
 
 
-    // modus.sort()
     return largestNum
     
 }

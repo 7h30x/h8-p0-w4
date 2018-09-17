@@ -20,16 +20,14 @@ Contoh:
 
 */
 
+
 function makanTerusRekursif(waktu) {
-  console.log('------'+waktu)
-  if (waktu<15 && waktu>0) {
-    return 1
-  }
-  if (waktu===0) {
-    return 0
+    
+  if(waktu>0) {
+       return 1+ makanTerusRekursif(waktu-15);
   }
   else {
-    return 1 + makanTerusRekursif(waktu-15)
+      return 0
   }
 }
 

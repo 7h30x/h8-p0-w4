@@ -22,16 +22,16 @@ if digits<10
 
 
 function kaliTerusRekursif(angka) {
-  var arrAngka=String(angka).split("");
-
-  var product=arrAngka.reduce((a,b)=>a*b);
-
-  if (arrAngka.length>1) {
-    return kaliTerusRekursif(product)
+  var stringAngka=String(angka);
+  if (stringAngka.length===1) {
+    return stringAngka;
   }
   else {
-    return product
-  } 
+    product=stringAngka.split("").reduce((a,b)=>a*b);
+    return kaliTerusRekursif(product)
+  }
+
+
 }
 
 // TEST CASES
@@ -40,4 +40,5 @@ console.log(kaliTerusRekursif(3)); // 3
 console.log(kaliTerusRekursif(24)); // 8
 console.log(kaliTerusRekursif(654)); // 0
 console.log(kaliTerusRekursif(1231)); // 6
+
 

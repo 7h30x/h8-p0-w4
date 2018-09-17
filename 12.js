@@ -44,7 +44,7 @@ function shoppingTime(memberId, money) {
 
   itemsArr.sort((a,b) =>b[1]-a[1])
 
-    
+    //exception handling:
     if (money<50000) {
       return console.log("Mohon maaf, uang tidak cukup");
     }
@@ -52,6 +52,7 @@ function shoppingTime(memberId, money) {
       return console.log("Mohon maaf, toko X hanya berlaku untuk member saja");
     }
     
+    //loop over items to buys
     else {
       console.log('---')
       for (j=0; j<itemsArr.length; j++) {

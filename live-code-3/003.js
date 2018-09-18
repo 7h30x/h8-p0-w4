@@ -11,28 +11,7 @@
  */
 
 function addValidationCode(users){
-  var results=[];
-  if(!users.length) {
-    return results;
-  }
-  for (i=0;i<users.length; i++) {
-    var namearr=users[i].name.split("");
-    var datearr=users[i]['join date'].replace(/-/g,"");
-    var newName="";
-
-    for (j=0;j<namearr.length-1;j+=2) {
-     
-      newName+=namearr[j+1];
-      newName+=namearr[j]
-     
-    }
-    if (namearr.length%2!==0) {
-      newName+=namearr[namearr.length-1]
-    }
-    results.push({name:users[i].name, validationCode:newName+datearr}) 
-  }
-  
-  return results;
+  // your code here
 }
 
 //Test case

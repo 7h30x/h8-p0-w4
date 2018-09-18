@@ -10,12 +10,13 @@ function getTotal(arrNumber) {
   var max=arrNumber[0];
   var i=0;
   var counter=0
-  if (arrNumber===[]) {
+  
+  if (!arrNumber.length) {
     return '';
   }
   while (arrNumber[i]===max) {
-    counter++;
-    i++;
+      counter++;
+      i++;
   }
   
   return `angka paling besar adalah ${max} dan jumlah kemunculan sebanyak ${counter} kali`;

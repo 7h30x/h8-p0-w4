@@ -46,10 +46,10 @@ function shoppingTime(memberId, money) {
 
     //exception handling:
     if (money<50000) {
-      return console.log("Mohon maaf, uang tidak cukup");
+      return "Mohon maaf, uang tidak cukup";
     }
     if (memberId==undefined || memberId==""){
-      return console.log("Mohon maaf, toko X hanya berlaku untuk member saja");
+      return "Mohon maaf, toko X hanya berlaku untuk member saja";
     }
     
     //loop over items to buys

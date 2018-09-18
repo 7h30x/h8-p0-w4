@@ -18,15 +18,7 @@ RULES
 */
 
 function countLetterRecursive(sentence, letter) {
-  str=String(sentence)[0];
-  
-  if(sentence.length>0){
-    return Number(str===letter) + countLetterRecursive(sentence.slice(1),letter);
-    }
-  
-  else{
-    return 0;
-  }
+  // hanya code disini!
 }
 
 console.log(countLetterRecursive('12104123', '1')); // 3

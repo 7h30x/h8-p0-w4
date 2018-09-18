@@ -25,31 +25,7 @@ Aturan coding:
 */
 
 function arrayMerge (firstData, secondData) {
-  if (!firstData.length) {
-    results=secondData;
-  }
-  else{
-    var results=firstData;
-    for (i=0; i<secondData.length; i++) {
-      var isUniq=true;
-      for (j=0;j<firstData.length;j++) {
-          if(secondData[i]===firstData[j]) {
-            var isUniq=false;
-            break;
-          }
-
-      }
-      if (isUniq===true) {
-        results.push(secondData[i])
-      }
-      
-    }
-  }
-    return results;
-    
-
-
-
+  // Code disini
 }
 
 // Test cases

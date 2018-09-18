@@ -23,46 +23,10 @@ RULE:
   - WAJIB menyertakan algoritma / pseudocode
   - Dilarang menggunakan .filter, .map, .reduce
   
-pseudocode:
-DECLARE 'evens' as array;
-DECLARE 'total' as 0;
-IF string.length MOD 2 is not equal to 0
-  CONCAT str[0] to str
-FOR i=0; i<str.length; increment i by 2
-  DECLARE 'pair' as str[i] CONCAT str[i+1]
-  IF 'pair' is even
-    PUSH 'pair' to 'evens' 
-ENDFOR
-IF length of 'evens' is undefined
-  RETURN 0
-FOR j=0; j<'evens'.length; increment j by 1 
-  ADD 'evens'[j] to 'total' 
-ENDFOR
-RETURN 'total'
-
-  */
-
+*/
 
 function evenPairsSum (str) {
-  var evens=[];
-  var total=0;
-  if(str.length%2!==0) {
-    str+=str[0];
-  }
-  for(let i=0;i<str.length;i+=2) {
-    var pair=str[i]+str[i+1];
-    
-    if (pair%2===0) {
-      evens.push(pair)
-    }
-  }
-  if(!evens.length) {
-    return 0;
-  }
-  for(j=0;j<evens.length;j++) {
-    total+=Number(evens[j]);
-  }
- return total;
+  // Code disini
 }
 
 console.log(evenPairsSum('2044101211')); // 86
